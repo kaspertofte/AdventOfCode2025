@@ -4,6 +4,10 @@ import globals from 'globals';
 
 export default [
     {
+        // Migrate ignore patterns from .eslintignore into the config
+        ignores: ['node_modules', 'dist'],
+    },
+    {
         files: ['**/*.ts'],
         languageOptions: {
             parser: tsParser,
