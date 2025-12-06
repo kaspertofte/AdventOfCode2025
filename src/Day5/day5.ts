@@ -17,10 +17,7 @@ export function part2(input: Database): number {
     let result = 0;
     const lastRange = input.fresh
         .sort((a, b) => a.start - b.start)
-        .reduce((prevRange, range, index) => {
-            if (index === 0) {
-                return { ...range };
-            }
+        .reduce((prevRange, range) => {
             if (range.start <= prevRange.end) {
                 return {
                     start: prevRange.start,
