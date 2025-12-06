@@ -17,7 +17,6 @@ export function readData<T = string>(
     return lines.map(parser);
 }
 
-
 export function readDataNoTrim<T = string>(
     dirName: string,
     fileName: string,
@@ -25,9 +24,7 @@ export function readDataNoTrim<T = string>(
     seperator: string = '\n',
 ): T[] {
     const filePath = path.join(dirName, fileName);
-    const lines = fs
-        .readFileSync(filePath, 'utf-8')
-        .split(seperator);
+    const lines = fs.readFileSync(filePath, 'utf-8').split(seperator);
 
     return lines.map(parser);
 }
