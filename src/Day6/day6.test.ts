@@ -1,6 +1,6 @@
 import { part1, part2 } from './day6';
 
-import { readData, readDataNoTrim } from '../common/data';
+import { readData } from '../common/data';
 
 describe('Part 1, first solution', () => {
     [
@@ -25,7 +25,7 @@ describe('Part 2', () => {
         { file: 'input.txt', expected: 7329921182115 },
     ].forEach(({ file, expected }) => {
         test(`${file} produces expected output`, () => {
-            const input = readDataNoTrim(__dirname, file, (line: string) => line.split(''));
+            const input = readData(__dirname, file, (line: string) => line.split(''), '\n', false);
             expect(part2(input)).toBe(expected);
         });
     });
