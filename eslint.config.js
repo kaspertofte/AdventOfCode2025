@@ -1,8 +1,9 @@
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import globals from 'globals';
+import { defineConfig } from 'eslint/config';
 
-export default [
+export default defineConfig([
     {
         // Migrate ignore patterns from .eslintignore into the config
         ignores: ['node_modules', 'dist'],
@@ -27,6 +28,7 @@ export default [
             ...typescriptEslint.configs.recommended.rules,
             '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
             '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+            'no-console': 'error',
         },
     },
-];
+]);

@@ -68,7 +68,6 @@ function getConstraints(input: Point[]): Constraint[] {
 // The constraint should return true, if the segment does not pass through the rectangle
 // The constraint should return false, if the segment passes through the rectangle
 function getConstraint(p1: Point, p2: Point): Constraint {
-    console.log('creating constraint:', p1, p2);
     const xA = Math.min(p1.x, p2.x);
     const xB = Math.max(p1.x, p2.x);
     const yA = Math.min(p1.y, p2.y);
